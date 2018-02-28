@@ -13,6 +13,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
+ *
+ * @author <a href="mailto:prperiscal@gmail.com">Pablo Rey Periscal</a>
+ * @since 1.0.0
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)

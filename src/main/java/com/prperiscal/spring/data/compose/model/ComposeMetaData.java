@@ -5,7 +5,10 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 /**
- * @author Pablo Rey Periscal
+ *
+ *
+ * @author <a href="mailto:prperiscal@gmail.com">Pablo Rey Periscal</a>
+ * @since 1.0.0
  */
 @Data
 @NoArgsConstructor
