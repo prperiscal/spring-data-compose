@@ -109,6 +109,8 @@ public class DatabaseComposer {
     private void connect(ComposeData composeData, Map<String, Object> insertedEntities) {
         composeData.getEntities().forEach(
                 (key, value) -> connectEntityGroup(key, value, composeData.getMetadata().get(key), insertedEntities));
+
+        insertedEntities.forEach((key,value) -> entityManager.refresh(value));
     }
 
     private void connectEntityGroup(String group, List<Map<String, Object>> entitiesData,
