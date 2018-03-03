@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 /**
- *
+ * <p>Base structure to map the compose resource into.
  *
  * @author <a href="mailto:prperiscal@gmail.com">Pablo Rey Periscal</a>
  * @since 1.0.0

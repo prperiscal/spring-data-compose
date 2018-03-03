@@ -35,6 +35,7 @@ import org.springframework.transaction.annotation.Transactional;
 /**
  * <p>Composer class which handles the importing data process.
  * <p>A Datasource must be configured and available for the compose process to success.
+ * <p>Take a look inside <a href="https://github.com/prperiscal/spring-data-compose">Spring Data Compose Repository</a>
  *
  * @author <a href="mailto:prperiscal@gmail.com">Pablo Rey Periscal</a>
  * @since 1.0.0
@@ -53,10 +54,13 @@ public class DatabaseComposer {
     private final ApplicationContext appContext;
 
     /**
+     * <p>Compose data, loads and reads the given json resource inserting its data it into the available dataSource.
+     * <p>This only works with jpa is bean used.
      *
-     * @param testClass Test class from where the compose is executed
+     * @param testClass       Test class from where the compose is executed
      * @param composeResource Json file name from where data will be read
-     * @throws IOException
+     *
+     * @throws IOException if the resource is not available or accessible
      */
     @Modifying
     @Transactional
@@ -110,7 +114,7 @@ public class DatabaseComposer {
         composeData.getEntities().forEach(
                 (key, value) -> connectEntityGroup(key, value, composeData.getMetadata().get(key), insertedEntities));
 
-        insertedEntities.forEach((key,value) -> entityManager.refresh(value));
+        insertedEntities.forEach((key, value) -> entityManager.refresh(value));
     }
 
     private void connectEntityGroup(String group, List<Map<String, Object>> entitiesData,
@@ -144,6 +148,7 @@ public class DatabaseComposer {
         }
     }
 
+    @SuppressWarnings("unchecked")
     private void setInto(Object entity, String fieldName, Object foreignEntity) {
         try {
             Method getter = getGetter(entity, fieldName);
@@ -159,6 +164,5 @@ public class DatabaseComposer {
             e.printStackTrace();
         }
     }
-
 
 }

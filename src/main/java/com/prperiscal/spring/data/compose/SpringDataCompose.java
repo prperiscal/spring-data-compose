@@ -12,7 +12,9 @@ import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- *
+ * <p>Annotates the Test class to use Spring Data Compose and make available the use of {@link DataComposeResource}.
+ * <p>Registers the needed listeners which allows the logic execution for preparing the database.
+ * <p>{@link Transactional} annotation will be inherited with the use of this annotation.
  *
  * @author <a href="mailto:prperiscal@gmail.com">Pablo Rey Periscal</a>
  * @since 1.0.0
