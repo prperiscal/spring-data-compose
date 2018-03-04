@@ -8,7 +8,7 @@ Spring module to compose database data dynamically for tests.
 
 Loads data from a json resource and insert them in the available data source. A different compose file can be specified for each test.
 
-This module does not provide a memory database such as H2 nor a testcontainer with a proper database engine. This is the developer responsibility. This module, uses the available engine to compose data on each test method execution.
+This module does not provide any memory database such as H2 configuration neither a testcontainer with a proper database engine. This module, uses the available engine to compose data on each test method execution.
 
 
 ## Getting Started
